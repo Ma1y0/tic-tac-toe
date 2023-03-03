@@ -43,6 +43,12 @@ const Game: Component = () => {
 		}
 	}
 
+	const handleRestart = () => {
+		setGrid(["", "", "", "", "", "", "", "", ""])
+		setTurn("X")
+		setWinner(null)
+	}
+
 	createEffect(() => handleCheck(grid()))
 
 	return (
@@ -67,6 +73,11 @@ const Game: Component = () => {
 							))}
 					</div>
 				))}
+				<div class="m-6">
+					{winner() === "O" || winner() === "X" ? (
+						<button onClick={handleRestart}>Play again?</button>
+					) : null}
+				</div>
 			</div>
 		</main>
 	)
