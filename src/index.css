@@ -17,3 +17,7 @@ body {
 h1 {
     @apply font-semibold text-7xl
 }
+
+.blue-circle {
+    color: blue;
+}
